@@ -1,12 +1,12 @@
 import streamlit as st
-import OS 
+import os
 st.set_page_config(
     page_title="Resume Help",
     page_icon="🚀",
 )
 
 from openai import OpenAI
-client = OS.environ("OPENAI_API_KEY")
+client = os.environ("OPENAI_API_KEY")
 def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
    completion = client.chat.completions.create(
         model=model,
