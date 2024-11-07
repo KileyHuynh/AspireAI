@@ -30,7 +30,7 @@ with col1:
     if o == "Other (please specify)":
         free_text = st.text_input("Please specify your goal type:")
 with col2:
-    st.image("pages/images/SG.webp")
+    st.image("BUS118i/pages/images/SG.webp")
 
 s = st.text_input("""
 :blue-background[:blue[**Specific:**]] What career goal do you want to accomplish? Please provide as much detail as you can.   
@@ -39,13 +39,13 @@ s = st.text_input("""
 M,A,RT = st.columns([2,3,3])
    
 with M:
-    options = ["Resume critiques", "Jobs applied", "Interviews", "Events attended", "Other"]
+    options = ["Resume critiques", "Jobs applied", "Events attended", "Other"]
     m = st.radio(":green-background[:green[**Measurable:**]] How will you track your progress?", options)
     if m == "Other":
         free_text = st.text_input("Please specify your metrics:")
 
 with A:
-    a = st.text_area(":orange-background[:orange[**Achievable:**]] List any skills/resources you have that are relevant to this goal:",height=125)
+    a = st.text_area(":orange-background[:orange[**Achievable:**]] List any skills/resources you have that are relevant to this goal:",height=100)
 with RT:
     r = st.multiselect(
     ":red-background[:red[**Relevant:**]] What are the career benefits?",

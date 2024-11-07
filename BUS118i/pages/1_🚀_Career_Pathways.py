@@ -58,12 +58,8 @@ Your output is a URL to a recent public video related to the student's job input
 Ensure the video is currently available and provide the URL in quotes."""
 
 if st.button("Generate Insights"):
-#    prompt2 = "My major is " + major + ". I am interested in pursuing a career in " + job1
     prompt2 = "I am interested in pursuing a career in " + job1
     st.write(get_completion(system_role2, prompt2))
-#    st.write(get_completion(system_role4, prompt2))
-#    video_url = get_completion(system_role4, prompt2)
-#    st.video(video_url)
 
 st.subheader("🏢 :green[Explore Companies]")
 

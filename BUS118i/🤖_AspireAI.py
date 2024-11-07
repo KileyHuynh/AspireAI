@@ -39,17 +39,17 @@ st.markdown("Navigate through each page to start your career journey today:")
 
 col1, col2, col3 = st.columns(3)
 with col1:
-   st.image("pages/images/CP.png")
+   st.image("BUS118i/pages/images/CP.png")
    st.page_link("pages/1_🚀_Career_Pathways.py", label="Learn About Careers", icon="🚀")
-   st.image("pages/images/GST.webp")
+   st.image("BUS118i/pages/images/GST.webp")
    st.page_link("pages/4_🌱_Get_Started_Today.py", label="Get Started Today", icon="🌱")
 with col2:
-   st.image("pages/images/JAI.webp")
+   st.image("BUS118i/pages/images/JAI.webp")
    st.page_link("pages/2_🤝_Land_a_Job_or_Internship.py", label="Land a Job or Internship", icon="🤝")
-   st.image("pages/images/AMA.webp")
+   st.image("BUS118i/pages/images/AMA.webp")
    st.page_link("pages/5_🔎_Ask_Me_Any_Question!.py", label="Ask Me Any Question", icon="🔎")
 with col3:
-   st.image("pages/images/RH.webp")
+   st.image("BUS118i/pages/images/RH.webp")
    st.page_link("pages/3_💼_Resume_Help.py", label="Tailor Your Resume", icon="💼")
-   st.image("pages/images/AbASP2.png")
+   st.image("BUS118i/pages/images/AbASP2.png")
    st.page_link("pages/6_💡_About_AspireAI.py", label="About AspireAI", icon="💡")
