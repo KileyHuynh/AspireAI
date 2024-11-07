@@ -50,6 +50,7 @@ def abstract_summary_extraction(transcription):
     return response.choices[0].message.content
 
 openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI()
 
 # Create a button to fetch the content
