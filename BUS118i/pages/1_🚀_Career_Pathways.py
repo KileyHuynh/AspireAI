@@ -5,11 +5,10 @@ st.set_page_config(
     page_icon="🚀",
 )
 
-from openai import OpenAI
-client = os.environ["OPENAI_API_KEY"]
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+import openai
+openai.api_key = os.environ["OPENAI_API_KEY"]
 def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
-   completion = client.chat.completions.create(
+   completion = openai.chat.completions.create(
         model=model,
         messages=[
         {"role": "system", "content": system_prompt},
@@ -36,9 +35,10 @@ with col2:
     hobby = st.text_input("What are your career interests, hobbies and/or skillsets?")
 
 system_role = """You are AspireAI, a professional business career advisor.
-Provide 5 to 7 bolded job positions for college business majors based on their personal interests or hobbies.
-Format it as [job position]: job description and roles.
-Also show the typical skills and courses needed for the entry level jobs."""
+Provide a numbered list of at least 5 job positions for business majors based on their interests/hobbies/skills.
+Be detailed and format it as [bolded job position]: [detailed job description].
+Also, under each job, briefly show relevant skills and college courses in their major that they should take for entry level jobs.
+Bold 'Skills:' and 'Relevant [Major] Courses:' and format it as 'Skills: [skills]' and 'Relevant [Major] Courses: [course], [course], [course]'."""
 
 if st.button("Generate Jobs"):
     prompt = "Your major is: " + major + ", your interest is: " + hobby
