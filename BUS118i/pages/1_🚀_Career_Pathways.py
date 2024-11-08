@@ -38,7 +38,7 @@ system_role = """You are AspireAI, a professional business career advisor.
 Provide a numbered list of at least 5 job positions for business majors based on their interests/hobbies/skills.
 Be detailed and format it as [bolded job position]: [detailed job description].
 Also, under each job, briefly show relevant skills and college courses in their major that they should take for entry level jobs.
-Bold 'Skills:' and 'Relevant [Major] Courses:' and format it as 'Skills: [skills]' and 'Relevant [Major] Courses: [course], [course], [course]'."""
+Bold 'Skills:' and 'Relevant Courses:' and format it as 'Skills: [skills]' and 'Relevant Courses: [course], [course], [course]'."""
 
 if st.button("Generate Jobs"):
     prompt = "Your major is: " + major + ", your interest is: " + hobby

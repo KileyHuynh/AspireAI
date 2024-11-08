@@ -25,8 +25,7 @@ Whether you're interested in:
 🤖 :violet[**AspireAI**] equips you with valuable industry insights, skills and tips to help you succeed.
 """)
 
-st.subheader(":gray[Contributors] 🛠️", divider="blue")
+st.subheader(":gray[Developers] 🛠️", divider="blue")
 st.markdown("""
-- Kiley Huynh
-- Yu Chen, Ph.D.
+Kiley Huynh
 """)

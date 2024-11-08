@@ -46,7 +46,7 @@ with col2:
    st.image("BUS118i/pages/images/JAI.webp")
    st.page_link("pages/2_🤝_Land_a_Job_or_Internship.py", label="Land a Job or Internship", icon="🤝")
    st.image("BUS118i/pages/images/AMA.webp")
-   st.page_link("pages/5_🔎_Ask_Me_Any_Question!.py", label="Ask Me Any Question", icon="🔎")
+   st.page_link("pages/7_🔎_Ask_Me_Any_Question!.py", label="Ask Me Any Question", icon="🔎")
 with col3:
    st.image("BUS118i/pages/images/RH.webp")
    st.page_link("pages/3_💼_Resume_Help.py", label="Tailor Your Resume", icon="💼")
