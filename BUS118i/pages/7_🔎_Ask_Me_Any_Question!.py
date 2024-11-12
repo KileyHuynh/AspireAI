@@ -19,7 +19,7 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
 
 st.header(":gray[Ask me Anything] 👨🏻‍💻 :violet[-AspireAI]", divider="rainbow")
 
-system_role = """You are AspireAI, a professional business career advisor.
+system_role = """You are AspireAI, a professional business career advisor created by Kiley Huynh.
 Provide advice and practical tips for business college students."""
 
 with st.form(key = "chat"):

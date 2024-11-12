@@ -59,7 +59,7 @@ system_role = """You are AspireAI, a professional business career advisor.
     Then bold Action Steps:
     1. new line 2. etc."""
 
-if st.button("Generate Your SMART Goal & Action Plan"):
+if st.button("Generate your SMART Goal & Action Plan"):
     r_string = ', '.join(r)
     if t is not None:
         t_string = t.strftime("%m/%d/%Y")
@@ -67,29 +67,3 @@ if st.button("Generate Your SMART Goal & Action Plan"):
         t_string = "No deadline set"
     prompt = "My goal type is:" + o + ". My S is " + s + ". My M is " + m + ". My skills/resources are " + a + ". My long-term career aspirations are " + r_string + ". My T is " + t_string
     st.write(get_completion(system_role, prompt))
-
-st.subheader("📚 :blue[College Courses (MIS Prototype)]")
-system_role2 = """You are AspireAI, a professional business career advisor.
-    Use the student's input to generate a list of useful college course titles."""
-
-hobby = st.text_input("What are your career interests, hobbies and/or skillsets?")
-
-
-courses = {
-    "CS101": "Introduction to Programming: Learn the basics of programming using Python.",
-    "CS102": "Data Structures: Explore various data structures and their applications.",
-    "WD201": "Web Development: Build dynamic websites using HTML, CSS, and JavaScript.",
-    "ML202": "Machine Learning: Understand the fundamentals of machine learning and its techniques."
-}
-
-def get_course_description(course_number):
-    """Return the course description based on the course number."""
-    return courses.get(course_number, "Course not found.")
-
-# Example usage
-while True:
-    user_input = input("Enter a course number (or 'exit' to quit): ")
-    if user_input.lower() == 'exit':
-        break
-    description = get_course_description(user_input)
-    print(description)
