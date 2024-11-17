@@ -43,7 +43,7 @@ s = st.text_input("""
 M,A,RT = st.columns([2,3,3])
    
 with M:
-    options = ["Resume critiques", "Jobs applied", "Events attended", "Other"]
+    options = ["Resume reviews", "Jobs applied", "Events attended", "Other"]
     m = st.radio(":green-background[:green[**Measurable:**]] How will you track your progress?", options)
     if m == "Other":
         free_text = st.text_input("Please specify your metrics:")
@@ -51,11 +51,15 @@ with M:
 with A:
     a = st.text_area(":orange-background[:orange[**Achievable:**]] List any skills/resources you have that are relevant to this goal:",height=100)
 with RT:
+    options = ["Career Advancement", "Skill Development", "Job Security", "Professional Networking", "Higher Job Satisfaction", "Increased Confidence", "Other"]
     r = st.multiselect(
-    ":red-background[:red[**Relevant:**]] What are the career benefits?",
-    ["Career Advancement", "Skill Development", "Job Security", "Enhanced Work Experience", "Professional Network Growth", "Higher Job Satisfaction", "Increased Confidence"],
-)
-    t = st.date_input(":violet-background[:violet[**Time-bound:**]] What's your target deadline?", value=None, format="MM/DD/YYYY")
+    ":red-background[:red[**Relevant:**]] What are the benefits?", options)
+    if "Other" in r:
+        other_option = st.text_input("Please specify the benefits:")
+        if other_option:
+            r.remove("Other")
+            r.append(other_option)
+    t = st.date_input(":violet-background[:violet[**Time-bound:**]] Enter your target deadline", value=None, format="MM/DD/YYYY")
 
 system_role = """You are AspireAI, a professional business career advisor for college students.
     Use the student's input to develop a detailed one to two sentence SMART goal. Make it easy for college students to understand. Include the target deadline in Month Day, Year format.

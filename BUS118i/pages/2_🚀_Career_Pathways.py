@@ -41,7 +41,7 @@ Be detailed and format it as [bolded job position]: [detailed job description].
 Also, under each job, briefly show relevant skills and college courses in their major that they should take for entry level jobs.
 Bold 'Skills:' and 'Relevant Courses:' and format it as 'Skills: [skills]' and 'Relevant Courses: [course], [course], [course]'."""
 
-if st.button("Explore Possible Career Paths"):
+if st.button("Explore Possible Careers"):
     prompt = "Your major is: " + major + ", your interest is: " + hobby
     st.write(get_completion(system_role, prompt))
 
@@ -63,7 +63,7 @@ system_role4 = """You are AspireAI, a professional business career advisor.
 Your output is a URL to a recent public video related to the student's job input.
 Ensure the video is currently available and provide the URL in quotes."""
 
-if st.button("Discover Career Trends, Skills to Develop, and Emerging Pathways"):
+if st.button("Discover Industry Trends, Skills to Develop, and Emerging Opportunities"):
     prompt2 = "I am interested in pursuing a career in " + job1
     st.write(get_completion(system_role2, prompt2))
 
@@ -74,8 +74,8 @@ st.subheader("🏢 :green[Major Companies by Location]")
 cola, colb = st.columns([7,5])
 with cola:
 #    job2 = st.text_input("What job position are you looking for? Select one from above.")
-    city = st.text_input("Which city would you like to work in?")
-    options = ["Open to Any", "Information Technology (IT)", "Financial Services / FinTech", "Healthcare / HealthTech", "Business Consulting", "Cybersecurity", "E-Commerce and Retail", "Semiconductors and Electronics", "Manufacturing and Supply Chain Management", "Telecommunications", "Other"]
+    city = st.text_input("What city would you like to work in?")
+    options = ["Open to Any", "Technology", "Financial Services / Banking", "Healthcare / Biotech", "Business Consulting", "Cybersecurity", "E-Commerce and Retail", "Digital Marketing", "Semiconductors and Electronics", "Manufacturing / Supply Chain Management", "Transportation and Logistics", "Real Estate", "Other"]
     environment = st.multiselect("What industry interests you?", options)
     if "Other" in environment:
         other_option = st.text_input("Please specify your option:")
@@ -92,7 +92,7 @@ if st.button("Research Companies"):
     Also, provide 5 descriptions of organizations including startups and established firms.
     Format it as [bolded company name]: [company description and URL]."""
     e_string = ', '.join(environment)
-    prompt3 = "What are some companies in this location, " + city + " in industry " + e_string + " for " + job1 + "? Provide direct URL links to their about pages to learn more about them."
+    prompt3 = "What are some companies in this city, " + city + " in industry " + e_string + " for " + job1 + "? Provide direct URL links to their about pages to learn more about them."
 #    prompt3 = "What are some companies in this location," + city + " for " + job1 + "? Provide direct URL links to their about pages to learn more about them."
     st.write(get_completion(system_role3, prompt3))
 

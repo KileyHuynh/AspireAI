@@ -20,8 +20,6 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
 st.header(":blue[SJSU MIS Courses] 📚", divider="rainbow")
 #st.markdown(":violet[**AspireAI**] is here to help you understand how your courses translate into career opportunities, giving you the insights you need to plan your future with confidence.")   
 st.markdown("These course descriptions are available on [SJSU](https://www.sjsu.edu/isystems/resume_course_descriptions.php), and you're welcome to include them on your resume!")
-st.subheader("👩🏻‍💻 :violet[Explore MIS Courses]")
-#st.markdown("*Select a course number(s) to get the description.*")
 
 courses = {
     "BUS4 092 - Introduction to Business Programming": "Employed Python programming (loops, branching, file access, and error handling) and teamwork skills to develop a notebook-based project to access and analyze data from the web.",
@@ -38,25 +36,33 @@ courses = {
     "BUS4 118W - Web Based Computing": "Programmed client and server-side business applications using HTML, CSS, and JavaScript. Developed a business website by applying UI design principles and wireframes."
 }
 
+col1, col2 = st.columns([14.25,5])
+with col1:
+    st.subheader("👩🏻‍💻 :violet[Explore MIS Courses]")
+    st.markdown("Select a course number(s) to get the description.")
+
+    user_input = st.multiselect(
+        "What courses have you taken before and are currently taking?",
+        ["BUS4 092 - Introduction to Business Programming",
+        "BUS4 110A - Fundamentals of Management Information Systems",
+        "BUS4 110B - Systems Analysis & Design", "BUS4 111 - Networking & Data Communications",
+        "BUS4 112 - Database Management Systems",
+        "BUS4 119A - Practicum in MIS",
+        "BUS4 119B - Business Strategy & Information Systems",
+        "BUS4 118A - Cloud Computing for Data Professionals",
+        "BUS4 118B - Business Intelligence",
+        "BUS4 118D - Big Data",
+        "BUS4 118I - AI for Social Good",
+        "BUS4 118W - Web Based Computing"
+        ],
+    )
+
+with col2:
+    st.image("BUS118i/pages/images/MIS.webp")
+
 def get_course_description(course_number):
     """Return the course description based on the course number."""
     return courses.get(course_number, "Course not found.")
-
-user_input = st.multiselect(
-    "What courses have you taken before and are currently taking?",
-    ["BUS4 092 - Introduction to Business Programming",
-     "BUS4 110A - Fundamentals of Management Information Systems",
-     "BUS4 110B - Systems Analysis & Design", "BUS4 111 - Networking & Data Communications",
-     "BUS4 112 - Database Management Systems",
-     "BUS4 119A - Practicum in MIS",
-     "BUS4 119B - Business Strategy & Information Systems",
-     "BUS4 118A - Cloud Computing for Data Professionals",
-     "BUS4 118B - Business Intelligence",
-     "BUS4 118D - Big Data",
-     "BUS4 118I - AI for Social Good",
-     "BUS4 118W - Web Based Computing"
-     ],
-)
 
 if st.button("Show Course Descriptions"):
     if user_input:
@@ -67,7 +73,7 @@ if st.button("Show Course Descriptions"):
     else:
         st.write("Please select at least one course.")
 
-st.subheader("💻 :green[Career Opportunities based on Courses Taken]")
+st.subheader("💻 :green[Career Paths based on Courses Taken]")
 
 descriptions = []
 for course in user_input:

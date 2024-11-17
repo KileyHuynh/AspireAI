@@ -58,13 +58,13 @@ with col4:
 
 st.write("")
 
-st.subheader(":gray[Ask me Anything] 👨🏻‍💻 :violet[-AspireAI]", divider="rainbow")
+st.subheader(":gray[Ask me Anything] 👨🏻‍💻", divider="rainbow")
 
 system_role = """You are AspireAI, a professional business career advisor.
 Provide advice and practical tips for business college students."""
 
 with st.form(key = "chat"):
-    prompt = st.text_input("🔎 Ask me any career-related question!")    
+    prompt = st.text_input("🔎 Ask :violet[**AspireAI**] any career question...")    
     submitted = st.form_submit_button("Submit")
     if submitted:
         st.write(get_completion(system_role, prompt))
