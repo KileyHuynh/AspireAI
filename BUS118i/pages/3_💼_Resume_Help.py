@@ -70,3 +70,9 @@ if st.button("Generate Updated Resume"):
     st.write(get_completion(system_role2, prompt2))
 
 st.caption(":red[NOTE: These results are AI-generated and may not fully reflect your professional experience. Please proofread and make any changes to fit your background.]")
+
+col1, col2 = st.columns([3,1])
+with col1:
+    st.markdown(":violet[*Afterward, set SMART goals to guide your professional growth on this page: ➜*]")
+with col2:
+    st.page_link("pages/4_🌱_Get_Started_Today.py", label=":green[**Get Started Today**]", icon="🌱")

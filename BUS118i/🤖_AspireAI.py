@@ -31,24 +31,40 @@ st.markdown("""Introducing your ultimate Business Career Advisor! Designed speci
 :violet[**AspireAI**] equips you with valuable industry insights, skills and tips to help you succeed.
 """)
 
-st.write("Discover what steps you can take right now to enhance your career readiness. Plus, get essential networking tips to connect with industry professionals and build meaningful relationships.")
-#—such as pursuing internships, setting SMART goals, and engaging in extracurricular activities—
-st.subheader(":blue[Ready to explore?]", divider="rainbow")
-st.markdown("Navigate through each page to start your career journey today:")
+st.write("Discover what steps you can take right now to enhance your career readiness. Plus, learn how to set SMART career goals and tailor your resume to align with specific job applications.")
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns([3,1])
 with col1:
-   st.image("BUS118i/pages/images/CP.png")
-   st.page_link("pages/1_🚀_Career_Pathways.py", label="Learn About Careers", icon="🚀")
-   st.image("BUS118i/pages/images/GST.webp")
-   st.page_link("pages/4_🌱_Get_Started_Today.py", label="Get Started Today", icon="🌱")
+    st.markdown(":green[*Get started by exploring MIS courses and the career opporunities they offer: ➜*]")
 with col2:
-   st.image("BUS118i/pages/images/JAI.webp")
-   st.page_link("pages/2_🤝_Land_a_Job_or_Internship.py", label="Land a Job or Internship", icon="🤝")
-   st.image("BUS118i/pages/images/AMA.webp")
-   st.page_link("pages/7_🔎_Ask_Me_Any_Question!.py", label="Ask Me Any Question", icon="🔎")
+    st.page_link("pages/1_📚_Explore_MIS_Courses.py", label=":blue[**Explore MIS Courses**]", icon="📚")
+
+st.subheader(":blue[Ready to explore?]", divider="rainbow")
+st.markdown("Navigate through each page to begin your career journey today.")
+
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+   st.image("BUS118i/pages/images/MIS.webp")
+   st.page_link("pages/1_📚_Explore_MIS_Courses.py", label="Explore MIS Courses")
+with col2:
+   st.image("BUS118i/pages/images/CP.png")
+   st.page_link("pages/2_🚀_Career_Pathways.py", label="Learn About Careers")
 with col3:
    st.image("BUS118i/pages/images/RH.webp")
-   st.page_link("pages/3_💼_Resume_Help.py", label="Tailor Your Resume", icon="💼")
-   st.image("BUS118i/pages/images/AbASP2.png")
-   st.page_link("pages/6_💡_About_AspireAI.py", label="About AspireAI", icon="💡")
+   st.page_link("pages/3_💼_Resume_Help.py", label="Tailor Your Resume")
+with col4:
+   st.image("BUS118i/pages/images/GST.webp")
+   st.page_link("pages/4_🌱_Get_Started_Today.py", label="Get Started Today")
+
+st.write("")
+
+st.subheader(":gray[Ask me Anything] 👨🏻‍💻 :violet[-AspireAI]", divider="rainbow")
+
+system_role = """You are AspireAI, a professional business career advisor.
+Provide advice and practical tips for business college students."""
+
+with st.form(key = "chat"):
+    prompt = st.text_input("🔎 Ask me any career-related question!")    
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+        st.write(get_completion(system_role, prompt))

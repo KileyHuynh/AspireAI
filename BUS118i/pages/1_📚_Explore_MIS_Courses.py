@@ -1,7 +1,7 @@
 import streamlit as st 
 import os
 st.set_page_config(
-    page_title="MIS Course Finder",
+    page_title="Explore MIS Courses",
     page_icon="💻",
 )
 
@@ -17,9 +17,9 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
     )
    return completion.choices[0].message.content
 
-st.header(":blue[SJSU Course Search] 📚", divider="rainbow")
+st.header(":blue[SJSU MIS Courses] 📚", divider="rainbow")
 st.markdown(":violet[**AspireAI**] is here to help you understand how your courses translate into career opportunities, giving you the insights you need to plan your future with confidence. These course descriptions are available on the [SJSU website](https://www.sjsu.edu/isystems/resume_course_descriptions.php), and you're welcome to include them on your resume!")
-st.subheader("👩🏻‍💻 :violet[MIS Course Finder]")
+st.subheader("👩🏻‍💻 :violet[Explore MIS Courses]")
 st.markdown("*Select a course number(s) to get the description.*")
 
 courses = {
@@ -72,7 +72,7 @@ descriptions = []
 for course in user_input:
     descriptions.append(f"{course}: {get_course_description(course)}")
 
-if st.button("Generate Career Opportunities"):
+if st.button("Explore Career Opportunities"):
     c_string = ', '.join(user_input)
     description_string = "\n".join(descriptions)
     system_role = f"""Provide career opportunities based on courses that the students have taken or are
@@ -86,6 +86,6 @@ if st.button("Generate Career Opportunities"):
 
 col1, col2 = st.columns([4,1])
 with col1:
-    st.markdown("*Afterward, take a closer look into job insights, skills, and companies on this page:  ➜*")
+    st.markdown(":violet[*Afterward, take a closer look into job insights, skills, and companies on this page:  ➜*]")
 with col2:
-    st.page_link("pages/1_🚀_Career_Pathways.py", label="Career Pathways", icon="🚀")
+    st.page_link("pages/2_🚀_Career_Pathways.py", label=":red[**Career Pathways**]", icon="🚀")
