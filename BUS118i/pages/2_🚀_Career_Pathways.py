@@ -73,7 +73,6 @@ st.subheader("🏢 :green[Major Companies by Location]")
 
 cola, colb = st.columns([7,5])
 with cola:
-#    job2 = st.text_input("What job position are you looking for? Select one from above.")
     city = st.text_input("What city would you like to work in?")
     options = ["Open to Any", "Technology", "Financial Services / Banking", "Healthcare / Biotech", "Business Consulting", "Cybersecurity", "E-Commerce and Retail", "Digital Marketing", "Semiconductors and Electronics", "Manufacturing / Supply Chain Management", "Transportation and Logistics", "Real Estate", "Other"]
     environment = st.multiselect("What industry interests you?", options)
