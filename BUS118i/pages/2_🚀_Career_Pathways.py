@@ -75,7 +75,7 @@ cola, colb = st.columns([7,5])
 with cola:
     city = st.text_input("What city would you like to work in?")
     options = ["Open to Any", "Technology", "Financial Services / Banking", "Healthcare / Biotech", "Business Consulting", "Cybersecurity", "E-Commerce and Retail", "Digital Marketing", "Semiconductors and Electronics", "Manufacturing / Supply Chain Management", "Transportation and Logistics", "Real Estate", "Other"]
-    environment = st.multiselect("What industry interests you?", options)
+    environment = st.multiselect("(Optional) What industry interests you?", options)
     if "Other" in environment:
         other_option = st.text_input("Please specify your option:")
         if other_option:
