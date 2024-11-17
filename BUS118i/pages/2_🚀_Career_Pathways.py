@@ -18,7 +18,7 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
    return completion.choices[0].message.content
 
 st.header(":red[Career Pathways] 🚀", divider="rainbow")
-st.markdown(":violet[**AspireAI**] is here to guide you through your career development! This page offers insights into various job roles, industry trends, and leading companies in your field.")
+st.markdown(":violet[**AspireAI**] offers insights into various job roles, industry trends, and leading companies in your field.")
 
 st.subheader("🗺️ :blue[Job Roles Exploration]")
 #st.markdown("Learn about potential career paths by entering your major and interests.")

@@ -18,7 +18,8 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
    return completion.choices[0].message.content
 
 st.header(":blue[SJSU MIS Courses] 📚", divider="rainbow")
-st.markdown(":violet[**AspireAI**] is here to help you understand how your courses translate into career opportunities, giving you the insights you need to plan your future with confidence. These course descriptions are available on the [SJSU website](https://www.sjsu.edu/isystems/resume_course_descriptions.php), and you're welcome to include them on your resume!")
+#st.markdown(":violet[**AspireAI**] is here to help you understand how your courses translate into career opportunities, giving you the insights you need to plan your future with confidence.")   
+st.markdown("These course descriptions are available on [SJSU](https://www.sjsu.edu/isystems/resume_course_descriptions.php), and you're welcome to include them on your resume!")
 st.subheader("👩🏻‍💻 :violet[Explore MIS Courses]")
 #st.markdown("*Select a course number(s) to get the description.*")
 

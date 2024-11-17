@@ -18,7 +18,7 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
    return completion.choices[0].message.content
 
 st.header(":violet[Resume Help] 💼", divider="rainbow")
-st.markdown("Whether you’re starting from scratch or refining an existing document, :violet[**AspireAI**] provides tips to make your resume shine. Get ready to make a lasting impression and boost your job search success!")
+st.markdown("Whether you're starting from scratch or refining an existing resume, :violet[**AspireAI**] tailors your resume to help you stand out and boost your job search success.")
 
 #st.subheader("Craft your Resume", divider="gray")
 #document = st.radio(

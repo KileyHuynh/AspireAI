@@ -24,7 +24,7 @@ def get_completion(system_prompt, user_prompt, model="gpt-3.5-turbo"):
    return completion.choices[0].message.content
 
 st.header(":green[Get Started Today] 🌱", divider="rainbow")
-st.markdown("With :violet[**AspireAI**], you can develop SMART goals, explore extracurriculars, and find courses that align with your career aspirations—all supported by tailored resources and expert guidance.")
+#st.markdown("With :violet[**AspireAI**], you can develop SMART goals, explore extracurriculars, and find courses that align with your career aspirations—all supported by tailored resources and expert guidance.")
 
 col1, col2 = st.columns([3,2])
 with col1:
